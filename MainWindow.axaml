@@ -1,0 +1,239 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="using:DrCeuticsQuiz.Controls"
+        x:Class="DrCeuticsQuiz.MainWindow"
+        Title="DrCeutics – Đố vui cùng Olive"
+        Background="#1B1B1B"
+        Width="540" Height="960">
+
+    <Window.Resources>
+        <FontFamily x:Key="Baloo">avares://DrCeuticsQuiz/Assets/Fonts#Mont ExtraBold</FontFamily>
+        <FontFamily x:Key="BvpMedium">avares://DrCeuticsQuiz/Assets/Fonts#Mont Medium</FontFamily>
+        <FontFamily x:Key="BvpBold">avares://DrCeuticsQuiz/Assets/Fonts#Mont Bold</FontFamily>
+        <SolidColorBrush x:Key="Brown" Color="#A8613A" />
+        <SolidColorBrush x:Key="BrownDark" Color="#5B2A17" />
+        <SolidColorBrush x:Key="Olive" Color="#A6B858" />
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource BvpMedium}" />
+            <Setter Property="Foreground" Value="#5B2A17" />
+        </Style>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontFamily" Value="{StaticResource Baloo}" />
+            <Setter Property="Foreground" Value="#A8613A" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style Selector="TextBlock.sub">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="LineHeight" Value="54" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style Selector="Border.logo">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="CornerRadius" Value="22" />
+            <Setter Property="Height" Value="120" />
+            <Setter Property="MinWidth" Value="430" />
+            <Setter Property="Padding" Value="44,0" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BoxShadow" Value="0 6 0 0 #145B2A17" />
+        </Style>
+        <Style Selector="Panel.screen">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Rectangle.px">
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+        <Style Selector="Rectangle.s">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+        </Style>
+    </Window.Styles>
+
+    <!-- Khung thiết kế cố định 1080 x 1920 – Viewbox tự co giãn theo màn hình standee -->
+    <Viewbox Stretch="Uniform">
+        <Panel Width="1080" Height="1920" ClipToBounds="True">
+            <Panel.Background>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Color="#F6E2D2" Offset="0" />
+                    <GradientStop Color="#F7EEDB" Offset="0.45" />
+                    <GradientStop Color="#EEF0CF" Offset="0.8" />
+                    <GradientStop Color="#E2EAB8" Offset="1" />
+                </LinearGradientBrush>
+            </Panel.Background>
+
+            <!-- ================= MÀN HÌNH CHỜ ================= -->
+            <Panel x:Name="HomeScreen" Classes="screen" Background="Transparent">
+                <!-- Ô pixel trang trí -->
+                <Canvas>
+                    <Rectangle Classes="px"   Fill="#A8613A" Canvas.Left="110" Canvas.Top="340" />
+                    <Rectangle Classes="px s" Fill="#A6B858" Canvas.Left="165" Canvas.Top="305" />
+                    <Rectangle Classes="px s" Fill="#5B2A17" Canvas.Left="905" Canvas.Top="370" />
+                    <Rectangle Classes="px"   Fill="#A6B858" Canvas.Left="945" Canvas.Top="325" />
+                    <Rectangle Classes="px"   Fill="#D9E3A0" Canvas.Left="80"  Canvas.Top="1060" />
+                    <Rectangle Classes="px s" Fill="#A8613A" Canvas.Left="130" Canvas.Top="1110" />
+                    <Rectangle Classes="px"   Fill="#5B2A17" Canvas.Left="965" Canvas.Top="1150" />
+                    <Rectangle Classes="px s" Fill="#A6B858" Canvas.Left="925" Canvas.Top="1110" />
+                    <Rectangle Classes="px s" Fill="#A6B858" Canvas.Left="150" Canvas.Top="1660" />
+                    <Rectangle Classes="px"   Fill="#A8613A" Canvas.Left="905" Canvas.Top="1690" />
+                </Canvas>
+
+                <!-- 5 khối nội dung, các hàng * là khoảng trống tự chia đều -->
+                <Grid RowDefinitions="Auto,*,Auto,*,Auto,*,Auto,*,Auto" Margin="0,70,0,70">
+
+                    <!-- 1. Logo -->
+                    <Border x:Name="LogoHome" Grid.Row="0" Classes="logo" />
+
+                    <!-- 2. Tiêu đề -->
+                    <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+                        <TextBlock Classes="h1" Text="ĐỐ VUI" FontSize="140" />
+                        <Border Background="#A8613A" CornerRadius="28" Padding="44,10" HorizontalAlignment="Center"
+                                BoxShadow="0 10 0 0 #5B2A17" Margin="0,-4,0,0">
+                            <Border.RenderTransform>
+                                <RotateTransform Angle="-3" />
+                            </Border.RenderTransform>
+                            <TextBlock Text="CÙNG OLIVE!" FontFamily="{StaticResource Baloo}" FontSize="108" Foreground="White" />
+                        </Border>
+                    </StackPanel>
+
+                    <!-- 3. Mascot trong khung góc -->
+                    <Panel Grid.Row="4" Width="760" Height="580">
+                        <Border Width="80" Height="80" HorizontalAlignment="Left"  VerticalAlignment="Top"    BorderBrush="#A8613A" BorderThickness="8,8,0,0" CornerRadius="20,0,0,0" />
+                        <Border Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Top"    BorderBrush="#A8613A" BorderThickness="0,8,8,0" CornerRadius="0,20,0,0" />
+                        <Border Width="80" Height="80" HorizontalAlignment="Left"  VerticalAlignment="Bottom" BorderBrush="#A8613A" BorderThickness="8,0,0,8" CornerRadius="0,0,0,20" />
+                        <Border Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="#A8613A" BorderThickness="0,0,8,8" CornerRadius="0,0,20,0" />
+                        <c:Mascot x:Name="HomeMascot" Expression="happy" Width="600" Height="490" />
+                    </Panel>
+
+                    <!-- 4. Hướng dẫn (các Run để chung 1 dòng để không bị thừa dấu cách) -->
+                    <Border Grid.Row="6" Background="#C0FFFFFF" BorderBrush="#A6B858" BorderThickness="5"
+                            CornerRadius="44" Padding="60,34" Width="900" HorizontalAlignment="Center">
+                        <TextBlock Classes="sub" FontSize="40" LineHeight="58">
+                            <Run Text="Trả lời đúng " /><Run Text="2/3 câu hỏi" FontFamily="{StaticResource BvpBold}" Foreground="#A8613A" /><Run Text=" về DrCeutics để nhận ngay " /><Run Text="phần quà" FontFamily="{StaticResource BvpBold}" Foreground="#A8613A" /><Run Text=" xinh xắn!" />
+                        </TextBlock>
+                    </Border>
+
+                    <!-- 5. Nút + dòng gợi ý -->
+                    <StackPanel Grid.Row="8" HorizontalAlignment="Center" Spacing="30">
+                        <Panel x:Name="StartHost" HorizontalAlignment="Center" />
+                        <!-- <TextBlock Text="Bấm BẮT ĐẦU để chơi" FontSize="32" Foreground="#A8613A" Opacity="0.75"
+                                HorizontalAlignment="Center" /> -->
+                    </StackPanel>
+                </Grid>
+            </Panel>
+
+            <!-- ================= MÀN HÌNH CÂU HỎI ================= -->
+            <Panel x:Name="QuizScreen" Classes="screen" Opacity="0" IsHitTestVisible="False" Background="Transparent">
+                <StackPanel HorizontalAlignment="Center" Width="900">
+                    <Border x:Name="LogoQuiz" Classes="logo" Margin="0,50,0,0" Height="104" />
+
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,36,0,0">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock x:Name="QStep" Classes="h1" HorizontalAlignment="Left" FontSize="84" Text="CÂU 1/3" />
+                            <StackPanel x:Name="QDots" Orientation="Horizontal" Spacing="18" Margin="0,4,0,0" />
+                        </StackPanel>
+                        <Panel Grid.Column="1" Width="190" Height="190">
+                            <c:TimerRing x:Name="Ring" />
+                            <TextBlock x:Name="TimerNum" Text="20" FontFamily="{StaticResource Baloo}" FontSize="96" Foreground="White"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Panel>
+                    </Grid>
+
+                    <Panel Margin="0,56,0,0">
+                        <Border Background="White" CornerRadius="44" BorderBrush="#A8613A" BorderThickness="8"
+                                BoxShadow="0 14 0 0 #5B2A17" MinHeight="360" Padding="80,64,110,50">
+                            <TextBlock x:Name="QText" FontFamily="{StaticResource BvpBold}" FontSize="46" LineHeight="64"
+                                       TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <Border Background="#A8613A" CornerRadius="30" Padding="34,10" HorizontalAlignment="Center"
+                                VerticalAlignment="Top" Margin="0,-30,0,0">
+                            <TextBlock Text="CÂU HỎI DRCEUTICS" FontFamily="{StaticResource BvpBold}" FontSize="30" Foreground="White" />
+                        </Border>
+                        <c:Mascot x:Name="PeekMascot" Expression="think" Width="240" Height="195"
+                                  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,-60,-70" />
+                    </Panel>
+
+                    <StackPanel x:Name="Answers" Spacing="24" Margin="0,56,0,0" />
+
+                    <Border x:Name="Feedback" Background="White" CornerRadius="36" Padding="38,22" Margin="0,40,0,0"
+                            BoxShadow="0 8 0 0 #E8DCC6" Opacity="0">
+                        <Border.Transitions>
+                            <Transitions>
+                                <DoubleTransition Property="Opacity" Duration="0:0:0.35" />
+                            </Transitions>
+                        </Border.Transitions>
+                        <StackPanel>
+                            <TextBlock x:Name="FbTitle" FontFamily="{StaticResource Baloo}" FontSize="48" />
+                            <TextBlock x:Name="FbText" FontSize="34" LineHeight="48" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <Panel x:Name="NextHost" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,64" />
+            </Panel>
+
+            <!-- ================= MÀN HÌNH KẾT QUẢ ================= -->
+            <Panel x:Name="ResultScreen" Classes="screen" Opacity="0" IsHitTestVisible="False" Background="Transparent">
+                <StackPanel HorizontalAlignment="Center">
+                    <Border x:Name="LogoResult" Classes="logo" Margin="0,70,0,0" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="24" Margin="0,90,0,0">
+                        <!-- ô vuông bên trái -->
+                        <Canvas Width="60" Height="60" VerticalAlignment="Top">
+                            <Rectangle Classes="px"   Fill="#A8613A" Canvas.Left="0"  Canvas.Top="30" />
+                            <Rectangle Classes="px s" Fill="#A6B858" Canvas.Left="40" Canvas.Top="0" />
+                        </Canvas>
+
+                        <TextBlock x:Name="RTitle" Classes="h1" FontSize="112" VerticalAlignment="Center" Text="CHÚC MỪNG!" />
+
+                        <!-- ô vuông bên phải -->
+                        <Canvas Width="60" Height="60" VerticalAlignment="Top">
+                            <Rectangle Classes="px s" Fill="#5B2A17" Canvas.Left="0"  Canvas.Top="40" />
+                            <Rectangle Classes="px"   Fill="#A6B858" Canvas.Left="30" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="16" Margin="0,4,0,0">
+                        <TextBlock Text="Bạn trả lời đúng" FontFamily="{StaticResource Baloo}" FontSize="52" VerticalAlignment="Center" />
+                        <Border Background="#A6B858" CornerRadius="40" Padding="30,4">
+                            <TextBlock x:Name="RScore" Text="2/3" FontFamily="{StaticResource Baloo}" FontSize="52" Foreground="White" />
+                        </Border>
+                        <TextBlock Text="câu" FontFamily="{StaticResource Baloo}" FontSize="52" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <Panel Width="820" Height="620" Margin="0,50,0,0">
+                        <c:GiftBox x:Name="Gift" Width="440" Height="420" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,80,10" />
+                        <c:Mascot x:Name="ResultMascot" Expression="wink" Width="320" Height="260"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-10,-40,0" />
+                    </Panel>
+
+                    <TextBlock x:Name="RMsg" Classes="sub" Width="880" Margin="0,20,0,0" />
+                </StackPanel>
+
+                <StackPanel x:Name="ResultBtns" Orientation="Horizontal" Spacing="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,150" />
+                <TextBlock x:Name="RCount" FontSize="30" Foreground="#A8613A" Opacity="0.7" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,80" />
+                <Canvas x:Name="Confetti" IsHitTestVisible="False" />
+            </Panel>
+
+            <!-- ================= THỐNG KÊ (chạm logo 5 lần) ================= -->
+            <Panel x:Name="AdminPanel" Background="#99281408" IsVisible="False">
+                <Border Background="White" CornerRadius="40" Padding="60" Width="800"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Spacing="16">
+                        <TextBlock Classes="h1" Text="THỐNG KÊ HÔM NAY" FontSize="64" />
+                        <TextBlock x:Name="StPlays" FontSize="40" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="StWins" FontSize="40" HorizontalAlignment="Center" />
+                        <StackPanel x:Name="AdminBtns" Orientation="Horizontal" Spacing="20" HorizontalAlignment="Center" Margin="0,24,0,0" />
+                    </StackPanel>
+                </Border>
+            </Panel>
+        </Panel>
+    </Viewbox>
+</Window>

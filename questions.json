@@ -1,0 +1,122 @@
+{
+  "config": {
+    "questionsPerGame": 3,
+    "passScore": 2,
+    "timePerQuestion": 20,
+    "autoNextMs": 3500,
+    "resultTimeout": 45,
+    "idleTimeout": 60
+  },
+  "questions": [
+    {
+      "question": "DrCeutics là thương hiệu dược mỹ phẩm của quốc gia nào?",
+      "options": [
+        "Việt Nam",
+        "Hàn Quốc",
+        "Pháp",
+        "Nhật Bản"
+      ],
+      "answer": 0,
+      "explain": "DrCeutics là thương hiệu Việt, phát triển công thức phù hợp với làn da người Việt."
+    },
+    {
+      "question": "Người sáng lập thương hiệu DrCeutics là ai?",
+      "options": [
+        "Dược sĩ Tiến",
+        "Bác sĩ Lan",
+        "Kỹ sư Minh",
+        "Chuyên gia Hùng"
+      ],
+      "answer": 0,
+      "explain": "DrCeutics do Dược sĩ Tiến sáng lập (Công ty TNHH Dược sĩ Tiến)."
+    },
+    {
+      "question": "Trụ sở Công ty TNHH Dược sĩ Tiến (DrCeutics) đặt tại thành phố nào?",
+      "options": [
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hải Phòng",
+        "Nha Trang"
+      ],
+      "answer": 0,
+      "explain": "Công ty đặt trụ sở tại đường Mậu Thân, Ninh Kiều, Cần Thơ."
+    },
+    {
+      "question": "Serum Niacinamide 12% của DrCeutics được kết hợp thêm hoạt chất nào?",
+      "options": [
+        "NAG 5%",
+        "Vitamin C 20%",
+        "Retinol 1%",
+        "Kojic Acid 3%"
+      ],
+      "answer": 0,
+      "explain": "Sản phẩm có tên Niacinamide 12% + NAG 5% — hỗ trợ giảm thâm, sáng da, kiềm dầu."
+    },
+    {
+      "question": "Niacinamide — hoạt chất chủ lực của nhiều serum DrCeutics — còn được gọi là gì?",
+      "options": [
+        "Vitamin B3",
+        "Vitamin C",
+        "Vitamin A",
+        "Vitamin E"
+      ],
+      "answer": 0,
+      "explain": "Niacinamide là một dạng Vitamin B3."
+    },
+    {
+      "question": "Vì sao BHA trong Basic BHA 2% của DrCeutics làm sạch sâu được lỗ chân lông?",
+      "options": [
+        "Vì BHA tan trong dầu",
+        "Vì BHA tan trong nước",
+        "Vì BHA là chất chống nắng",
+        "Vì BHA là chất tạo mùi"
+      ],
+      "answer": 0,
+      "explain": "BHA tan trong dầu nên thấm vào lỗ chân lông, làm tan bã nhờn và tế bào chết."
+    },
+    {
+      "question": "Dòng làm sạch của DrCeutics (sữa rửa mặt, nước tẩy trang) mang tên loại quả nào?",
+      "options": [
+        "Olive",
+        "Bơ",
+        "Lựu",
+        "Chanh"
+      ],
+      "answer": 0,
+      "explain": "Gentle Olive Cleansing Foam và Ultra-mild Olive Cleansing Water — cũng chính là bạn Olive mascot!"
+    },
+    {
+      "question": "Kem dưỡng ẩm Dual Urea của DrCeutics chứa bao nhiêu % Urea?",
+      "options": [
+        "15%",
+        "5%",
+        "30%",
+        "50%"
+      ],
+      "answer": 0,
+      "explain": "Dual Urea 15% Moisture Replenishing Cream giúp bổ sung và giữ ẩm cho da."
+    },
+    {
+      "question": "Khi dùng AHA, BHA hoặc Retinol, bước nào KHÔNG được bỏ qua vào ban ngày?",
+      "options": [
+        "Kem chống nắng",
+        "Xịt khoáng",
+        "Mặt nạ giấy",
+        "Tẩy da chết"
+      ],
+      "answer": 0,
+      "explain": "Các hoạt chất này làm da nhạy nắng hơn, nên cần chống nắng mỗi ngày."
+    },
+    {
+      "question": "Sản phẩm Retinol 0.5% của DrCeutics được kết hợp với hoạt chất nào?",
+      "options": [
+        "Niacinamide 5%",
+        "BHA 10%",
+        "Hydroquinone 4%",
+        "Cồn 70%"
+      ],
+      "answer": 0,
+      "explain": "Retinol 0.5% + Niacinamide 5% + Apple C.E. — chống lão hoá, củng cố hàng rào da."
+    }
+  ]
+}

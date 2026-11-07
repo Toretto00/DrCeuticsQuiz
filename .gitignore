@@ -1,0 +1,27 @@
+# ===== Kết quả build .NET (tự sinh lại mỗi lần build, không đưa lên Git) =====
+bin/
+obj/
+publish/
+
+# ===== File cá nhân của IDE =====
+.vs/
+.idea/
+*.user
+*.suo
+*.swp
+
+# VS Code: giữ cấu hình chạy/build dùng chung, bỏ phần còn lại
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ===== File rác của hệ điều hành =====
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# ===== Log =====
+*.log
