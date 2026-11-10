@@ -49,8 +49,6 @@ public partial class MainWindow : Window
     readonly RotateTransform _homeRot = new();
     readonly TranslateTransform _homeMove = new();
     readonly ScaleTransform _pulse = new();
-    readonly RotateTransform _resultRot = new();
-    readonly TranslateTransform _resultMove = new();
     readonly List<(Rectangle R, double Vy, double Vr)> _confetti = new();
 
     readonly List<DateTime> _logoTaps = new();
@@ -75,16 +73,14 @@ public partial class MainWindow : Window
         }
 
         // Nút
-        var start = MakePill("BẮT ĐẦU", false, StartGame);
-        StartHost.Children.Add(start);
+        StartHost.Children.Add(MakePill("BẮT ĐẦU", false, StartGame));
         StartHost.RenderTransform = _pulse;
-        NextHost.Children.Add(MakePill("TIẾP TỤC", false, Next));
+        NextHost.Children.Add(MakePill("TIẾP TỤC", false, Next, 52));
         AdminBtns.Children.Add(MakePill("XOÁ SỐ LIỆU", true, ResetStats, 40));
         AdminBtns.Children.Add(MakePill("ĐÓNG", false, () => AdminPanel.IsVisible = false, 40));
         AdminPanel.Tapped += (_, e) => e.Handled = true;
 
         HomeMascot.RenderTransform = new TransformGroup { Children = { _homeRot, _homeMove } };
-        ResultMascot.RenderTransform = new TransformGroup { Children = { _resultRot, _resultMove } };
 
         _secTimer.Tick += (_, _) => OnSecond();
         _animTimer.Tick += (_, _) => OnFrame();
@@ -153,7 +149,7 @@ public partial class MainWindow : Window
         for (var k = 0; k < _qs.Count; k++)
         {
             IBrush b = k < _qi ? (_results[k] ? OkB : BadB) : k == _qi ? OliveB : DotOff;
-            QDots.Children.Add(new Border { Width = 46, Height = 20, CornerRadius = new CornerRadius(10), Background = b });
+            QDots.Children.Add(new Border { Width = 42, Height = 18, CornerRadius = new CornerRadius(9), Background = b });
         }
 
         QText.Text = q.Src.Text;
@@ -214,7 +210,7 @@ public partial class MainWindow : Window
     {
         row.Background = new SolidColorBrush(Color.Parse(bg));
         row.BorderBrush = accent;
-        row.BoxShadow = BoxShadows.Parse($"0 9 0 0 {shadow}");
+        row.BoxShadow = BoxShadows.Parse($"0 8 0 0 {shadow}");
         key.Background = accent;
     }
 
@@ -240,31 +236,21 @@ public partial class MainWindow : Window
 
         if (win)
         {
-            ResultMascot.Expression = "wink";
-            ResultMascot.Width = 320; ResultMascot.Height = 260;
-            ResultMascot.HorizontalAlignment = HorizontalAlignment.Right;
-            ResultMascot.VerticalAlignment = VerticalAlignment.Top;
-            ResultMascot.Margin = new Thickness(0, -10, -40, 0);
-            SetMsg(("Bạn đã nhận được ", false), ("1 phần quà", true), (" từ DrCeutics!\nVui lòng đưa màn hình này cho nhân viên nhé.", false));
+            SetMsg(("Bạn đã nhận được ", false), ("1 phần quà", true), (" từ DrCeutics!", false));
             _stats = Stats.Load(); _stats.Wins++; _stats.Save();
             StartConfetti();
         }
         else
         {
-            ResultMascot.Expression = "sad";
-            ResultMascot.Width = 560; ResultMascot.Height = 455;
-            ResultMascot.HorizontalAlignment = HorizontalAlignment.Center;
-            ResultMascot.VerticalAlignment = VerticalAlignment.Center;
-            ResultMascot.Margin = new Thickness(0);
             SetMsg(($"Cần đúng ít nhất {Cfg.PassScore}/{n} câu để nhận quà.\nThử lại lần nữa cùng Olive nhé!", false));
         }
 
-       // Nút màn kết thúc: cùng độ rộng, chữ nhỏ hơn, chừa khoảng cách với mép màn hình
+        // Nút màn kết thúc: cùng độ rộng, chừa khoảng cách với mép màn hình
         Border ResultBtn(string text, bool brown, Action onTap)
         {
             var b = MakePill(text, brown, onTap, 46);
-            b.Width = 380;                         // độ rộng cố định cho cả 2 nút
-            b.Padding = new Thickness(0, 14);      // chữ tự căn giữa trong nút
+            b.Width = 380;
+            b.Padding = new Thickness(0, 14);
             return b;
         }
 
@@ -313,7 +299,7 @@ public partial class MainWindow : Window
     }
 
     // =====================================================================
-    //  ANIMATION (mascot nhún nhảy, nút BẮT ĐẦU nhịp, confetti)
+    //  ANIMATION (mascot màn chờ nhún nhảy, nút BẮT ĐẦU nhịp, confetti)
     // =====================================================================
     void OnFrame()
     {
@@ -322,8 +308,6 @@ public partial class MainWindow : Window
         _homeMove.Y = -18 * (0.5 - 0.5 * Math.Cos(t * 2 * Math.PI / 3));
         var s = 1 + 0.03 * (1 - Math.Cos(t * 2 * Math.PI / 1.6));
         _pulse.ScaleX = s; _pulse.ScaleY = s;
-        _resultRot.Angle = 6 * Math.Sin(t * 2 * Math.PI / 2.4);
-        _resultMove.Y = -7 * (1 - Math.Cos(t * 2 * Math.PI / 2.4));
 
         for (var i = _confetti.Count - 1; i >= 0; i--)
         {
@@ -409,18 +393,19 @@ public partial class MainWindow : Window
         return b;
     }
 
+    /// Một dòng đáp án (bản gọn: thấp hơn, chữ 38)
     (Border Row, Border Key) MakeAnswer(string letter, string text)
     {
         var key = new Border
         {
-            Width = 88, Height = 88, CornerRadius = new CornerRadius(44), Background = OliveB,
-            Child = new TextBlock { Text = letter, FontFamily = _baloo, FontSize = 54, Foreground = Brushes.White,
+            Width = 76, Height = 76, CornerRadius = new CornerRadius(38), Background = OliveB,
+            Child = new TextBlock { Text = letter, FontFamily = _baloo, FontSize = 44, Foreground = Brushes.White,
                                     HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center }
         };
-        var label = new TextBlock { Text = text, FontFamily = _bvpBold, FontSize = 44, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
+        var label = new TextBlock { Text = text, FontFamily = _bvpBold, FontSize = 38, LineHeight = 50, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
         var grid = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,*") };
         Grid.SetColumn(label, 1);
-        label.Margin = new Thickness(34, 0, 0, 0);
+        label.Margin = new Thickness(28, 0, 0, 0);
         grid.Children.Add(key);
         grid.Children.Add(label);
 
@@ -429,8 +414,8 @@ public partial class MainWindow : Window
         {
             Background = new SolidColorBrush(Color.Parse("#D9FFFFFF")),
             BorderBrush = Hex("#E8DCC6"), BorderThickness = new Thickness(5),
-            CornerRadius = new CornerRadius(70), Padding = new Thickness(18, 16, 40, 16),
-            BoxShadow = BoxShadows.Parse("0 9 0 0 #DCCBB0"), RenderTransform = move, Child = grid
+            CornerRadius = new CornerRadius(60), Padding = new Thickness(14, 14, 36, 14),
+            BoxShadow = BoxShadows.Parse("0 8 0 0 #DCCBB0"), RenderTransform = move, Child = grid
         };
         row.PointerPressed += (_, _) => { if (!_locked) move.Y = 7; };
         row.PointerReleased += (_, _) => move.Y = 0;

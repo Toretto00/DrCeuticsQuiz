@@ -9,114 +9,335 @@
   },
   "questions": [
     {
-      "question": "DrCeutics là thương hiệu dược mỹ phẩm của quốc gia nào?",
+      "question": "Bạn nên làm gì 1–3 lần/tuần để hỗ trợ hạn chế tích tụ tế bào sừng gây bít tắc?",
       "options": [
-        "Việt Nam",
-        "Hàn Quốc",
-        "Pháp",
-        "Nhật Bản"
+        "Tẩy tế bào chết phù hợp",
+        "Đắp mặt nạ giấy",
+        "Xông hơi mặt",
+        "Rửa mặt bằng nước nóng"
       ],
       "answer": 0,
-      "explain": "DrCeutics là thương hiệu Việt, phát triển công thức phù hợp với làn da người Việt."
+      "explain": "Tẩy tế bào chết (AHA/BHA) 1–3 lần/tuần giúp loại bỏ lớp tế bào sừng tích tụ, hạn chế bít tắc lỗ chân lông."
     },
     {
-      "question": "Người sáng lập thương hiệu DrCeutics là ai?",
-      "options": [
-        "Dược sĩ Tiến",
-        "Bác sĩ Lan",
-        "Kỹ sư Minh",
-        "Chuyên gia Hùng"
-      ],
+      "question": "Bước skincare quan trọng nhất vào ban ngày là gì?",
+      "options": ["Kem chống nắng", "Toner", "Xịt khoáng", "Mặt nạ ngủ"],
       "answer": 0,
-      "explain": "DrCeutics do Dược sĩ Tiến sáng lập (Công ty TNHH Dược sĩ Tiến)."
+      "explain": "Kem chống nắng bảo vệ da khỏi tia UV – nguyên nhân hàng đầu gây thâm, nám và lão hoá."
     },
     {
-      "question": "Trụ sở Công ty TNHH Dược sĩ Tiến (DrCeutics) đặt tại thành phố nào?",
-      "options": [
-        "Cần Thơ",
-        "Đà Nẵng",
-        "Hải Phòng",
-        "Nha Trang"
-      ],
+      "question": "Hoạt chất nào thường được dùng để làm sạch bã nhờn trong lỗ chân lông?",
+      "options": ["BHA", "Vitamin C", "Ceramide", "Panthenol"],
       "answer": 0,
-      "explain": "Công ty đặt trụ sở tại đường Mậu Thân, Ninh Kiều, Cần Thơ."
+      "explain": "BHA tan trong dầu nên đi sâu vào lỗ chân lông, làm sạch bã nhờn và tế bào chết."
     },
     {
-      "question": "Serum Niacinamide 12% của DrCeutics được kết hợp thêm hoạt chất nào?",
+      "question": "BHA phổ biến nhất trong skincare là gì?",
       "options": [
-        "NAG 5%",
-        "Vitamin C 20%",
-        "Retinol 1%",
-        "Kojic Acid 3%"
+        "Salicylic Acid",
+        "Glycolic Acid",
+        "Lactic Acid",
+        "Hyaluronic Acid"
       ],
       "answer": 0,
-      "explain": "Sản phẩm có tên Niacinamide 12% + NAG 5% — hỗ trợ giảm thâm, sáng da, kiềm dầu."
+      "explain": "Salicylic Acid là BHA được dùng phổ biến nhất trong các sản phẩm cho da dầu, mụn."
     },
     {
-      "question": "Niacinamide — hoạt chất chủ lực của nhiều serum DrCeutics — còn được gọi là gì?",
+      "question": "AHA chủ yếu hoạt động ở đâu?",
       "options": [
-        "Vitamin B3",
-        "Vitamin C",
-        "Vitamin A",
-        "Vitamin E"
+        "Bề mặt da",
+        "Sâu trong lỗ chân lông",
+        "Tuyến bã nhờn",
+        "Lớp mỡ dưới da"
       ],
       "answer": 0,
-      "explain": "Niacinamide là một dạng Vitamin B3."
+      "explain": "AHA tan trong nước nên chủ yếu tác động lên bề mặt da, giúp da mịn và đều màu hơn."
     },
     {
-      "question": "Vì sao BHA trong Basic BHA 2% của DrCeutics làm sạch sâu được lỗ chân lông?",
+      "question": "Da dầu có cần dưỡng ẩm không?",
       "options": [
-        "Vì BHA tan trong dầu",
-        "Vì BHA tan trong nước",
-        "Vì BHA là chất chống nắng",
-        "Vì BHA là chất tạo mùi"
+        "Có",
+        "Không",
+        "Chỉ cần vào mùa đông",
+        "Chỉ khi da bong tróc"
       ],
       "answer": 0,
-      "explain": "BHA tan trong dầu nên thấm vào lỗ chân lông, làm tan bã nhờn và tế bào chết."
+      "explain": "Da dầu vẫn cần dưỡng ẩm. Thiếu ẩm có thể khiến da tiết dầu nhiều hơn."
     },
     {
-      "question": "Dòng làm sạch của DrCeutics (sữa rửa mặt, nước tẩy trang) mang tên loại quả nào?",
+      "question": "Bóng dầu có đồng nghĩa với đủ ẩm không?",
       "options": [
-        "Olive",
-        "Bơ",
-        "Lựu",
-        "Chanh"
+        "Không",
+        "Có",
+        "Có, nếu da không bong tróc",
+        "Chỉ đúng với da hỗn hợp"
       ],
       "answer": 0,
-      "explain": "Gentle Olive Cleansing Foam và Ultra-mild Olive Cleansing Water — cũng chính là bạn Olive mascot!"
+      "explain": "Dầu và nước (độ ẩm) là hai thứ khác nhau. Da bóng dầu vẫn có thể thiếu nước."
     },
     {
-      "question": "Kem dưỡng ẩm Dual Urea của DrCeutics chứa bao nhiêu % Urea?",
-      "options": [
-        "15%",
-        "5%",
-        "30%",
-        "50%"
-      ],
+      "question": "Niacinamide còn được gọi là vitamin gì?",
+      "options": ["Vitamin B3", "Vitamin B5", "Vitamin C", "Vitamin A"],
       "answer": 0,
-      "explain": "Dual Urea 15% Moisture Replenishing Cream giúp bổ sung và giữ ẩm cho da."
+      "explain": "Niacinamide là một dạng của Vitamin B3."
     },
     {
-      "question": "Khi dùng AHA, BHA hoặc Retinol, bước nào KHÔNG được bỏ qua vào ban ngày?",
+      "question": "Niacinamide thường được dùng để hỗ trợ vấn đề gì?",
       "options": [
-        "Kem chống nắng",
-        "Xịt khoáng",
-        "Mặt nạ giấy",
-        "Tẩy da chết"
+        "Dầu, thâm và hàng rào da",
+        "Tẩy tế bào chết mạnh",
+        "Thay thế kem chống nắng",
+        "Trị nấm da"
       ],
       "answer": 0,
-      "explain": "Các hoạt chất này làm da nhạy nắng hơn, nên cần chống nắng mỗi ngày."
+      "explain": "Niacinamide hỗ trợ kiềm dầu, mờ thâm và củng cố hàng rào bảo vệ da."
     },
     {
-      "question": "Sản phẩm Retinol 0.5% của DrCeutics được kết hợp với hoạt chất nào?",
+      "question": "Panthenol là tiền vitamin gì?",
+      "options": ["Vitamin B5", "Vitamin B3", "Vitamin B12", "Vitamin C"],
+      "answer": 0,
+      "explain": "Panthenol là tiền chất của Vitamin B5, giúp làm dịu và phục hồi da."
+    },
+    {
+      "question": "Da đang treatment dễ khô nên bổ sung nhóm sản phẩm nào?",
       "options": [
-        "Niacinamide 5%",
-        "BHA 10%",
-        "Hydroquinone 4%",
-        "Cồn 70%"
+        "Dưỡng ẩm – phục hồi",
+        "Tẩy da chết mạnh",
+        "Toner chứa cồn",
+        "Mặt nạ đất sét"
       ],
       "answer": 0,
-      "explain": "Retinol 0.5% + Niacinamide 5% + Apple C.E. — chống lão hoá, củng cố hàng rào da."
+      "explain": "Khi treatment, da dễ khô và nhạy cảm, cần bổ sung dưỡng ẩm và phục hồi hàng rào da."
+    },
+    {
+      "question": "Retinoid thường nên dùng vào thời điểm nào?",
+      "options": [
+        "Buổi tối",
+        "Buổi sáng trước khi ra nắng",
+        "Buổi trưa",
+        "Bất kỳ lúc nào, không cần chống nắng"
+      ],
+      "answer": 0,
+      "explain": "Retinoid dễ bị phân huỷ bởi ánh sáng và làm da nhạy nắng hơn, nên dùng buổi tối và chống nắng ban ngày."
+    },
+    {
+      "question": "Vitamin C thường được dùng để hỗ trợ vấn đề nào?",
+      "options": [
+        "Xỉn màu và oxy hoá",
+        "Mụn đầu đen",
+        "Da thiếu nước",
+        "Lỗ chân lông bít tắc"
+      ],
+      "answer": 0,
+      "explain": "Vitamin C là chất chống oxy hoá, giúp da sáng và đều màu hơn."
+    },
+    {
+      "question": "Tranexamic Acid thường được quan tâm trong chăm sóc vấn đề gì?",
+      "options": [
+        "Tăng sắc tố",
+        "Mụn đầu đen",
+        "Da thiếu nước",
+        "Da bong tróc"
+      ],
+      "answer": 0,
+      "explain": "Tranexamic Acid hỗ trợ cải thiện tăng sắc tố như thâm, nám, da không đều màu."
+    },
+    {
+      "question": "Alpha Arbutin thường được dùng với mục tiêu gì?",
+      "options": [
+        "Hỗ trợ làm sáng da",
+        "Tẩy tế bào chết",
+        "Kiềm dầu",
+        "Cấp nước"
+      ],
+      "answer": 0,
+      "explain": "Alpha Arbutin hỗ trợ ức chế hình thành melanin, giúp da sáng và đều màu."
+    },
+    {
+      "question": "Melanin là sắc tố quyết định chủ yếu điều gì?",
+      "options": [
+        "Màu da",
+        "Độ ẩm của da",
+        "Độ dày của da",
+        "Lượng dầu trên da"
+      ],
+      "answer": 0,
+      "explain": "Melanin là sắc tố quyết định màu da, tóc và mắt."
+    },
+    {
+      "question": "Da mụn có nên dùng kem chống nắng không?",
+      "options": [
+        "Có",
+        "Không",
+        "Không, vì kem chống nắng gây mụn",
+        "Chỉ khi đã hết mụn"
+      ],
+      "answer": 0,
+      "explain": "Da mụn vẫn cần chống nắng để hạn chế thâm sau mụn. Nên chọn loại nhẹ, không gây bít tắc."
+    },
+    {
+      "question": "Rửa mặt quá nhiều có tốt cho da dầu không?",
+      "options": [
+        "Không",
+        "Có",
+        "Có, càng rửa nhiều càng bớt dầu",
+        "Có, nên rửa sau mỗi 2–3 tiếng"
+      ],
+      "answer": 0,
+      "explain": "Rửa mặt quá nhiều làm mất lớp dầu bảo vệ, da dễ khô và tiết dầu nhiều hơn. 2 lần/ngày là đủ."
+    },
+    {
+      "question": "Prebiotics trong skincare hỗ trợ gì?",
+      "options": [
+        "Hệ vi sinh da",
+        "Tẩy tế bào chết",
+        "Chống nắng",
+        "Làm trắng da"
+      ],
+      "answer": 0,
+      "explain": "Prebiotics nuôi dưỡng lợi khuẩn, giúp cân bằng hệ vi sinh trên da."
+    },
+    {
+      "question": "Ceramide là thành phần quan trọng của bộ phận nào?",
+      "options": [
+        "Hàng rào lipid",
+        "Tuyến bã nhờn",
+        "Nang lông",
+        "Lớp mỡ dưới da"
+      ],
+      "answer": 0,
+      "explain": "Ceramide là thành phần chính của hàng rào lipid, giúp giữ ẩm và bảo vệ da."
+    },
+    {
+      "question": "Có nên rửa mặt lại sau khi tẩy trang không?",
+      "options": [
+        "Có",
+        "Không, tẩy trang là đủ sạch",
+        "Chỉ cần lau lại bằng toner",
+        "Chỉ cần rửa bằng nước"
+      ],
+      "answer": 0,
+      "explain": "Nên rửa mặt lại sau tẩy trang để làm sạch hoàn toàn cặn trang điểm và dầu thừa."
+    },
+    {
+      "question": "Có nên dùng nhiều acid cùng lúc để da bong nhanh hơn không?",
+      "options": [
+        "Không",
+        "Có",
+        "Có, da bong càng nhanh càng tốt",
+        "Có, nếu da dầu"
+      ],
+      "answer": 0,
+      "explain": "Dùng nhiều acid cùng lúc dễ gây kích ứng và tổn thương hàng rào da."
+    },
+    {
+      "question": "Routine cơ bản tối thiểu gồm những bước nào?",
+      "options": [
+        "Làm sạch – dưỡng ẩm – chống nắng",
+        "Tẩy trang – toner – serum",
+        "Làm sạch – tẩy da chết – mặt nạ",
+        "Serum – kem mắt – xịt khoáng"
+      ],
+      "answer": 0,
+      "explain": "Làm sạch, dưỡng ẩm và chống nắng là 3 bước nền tảng cho mọi loại da."
+    },
+    {
+      "question": "Có nên thay đổi quá nhiều sản phẩm skincare cùng lúc không?",
+      "options": [
+        "Không",
+        "Có",
+        "Có, để thấy hiệu quả nhanh hơn",
+        "Có, nên đổi toàn bộ mỗi tháng"
+      ],
+      "answer": 0,
+      "explain": "Đổi nhiều sản phẩm cùng lúc dễ kích ứng và khó biết sản phẩm nào gây vấn đề."
+    },
+    {
+      "question": "Điều quan trọng nhất khi xây routine skincare là gì?",
+      "options": [
+        "Phù hợp tình trạng da",
+        "Càng nhiều bước càng tốt",
+        "Chọn sản phẩm đắt tiền",
+        "Dùng theo xu hướng"
+      ],
+      "answer": 0,
+      "explain": "Routine hiệu quả nhất là routine phù hợp với tình trạng da của chính bạn."
+    },
+    {
+      "question": "Salicylic Acid thuộc nhóm hoạt chất nào?",
+      "options": ["BHA", "AHA", "PHA", "Retinoid"],
+      "answer": 0,
+      "explain": "Salicylic Acid là BHA – tan trong dầu, làm sạch sâu lỗ chân lông."
+    },
+    {
+      "question": "Glycolic Acid thuộc nhóm hoạt chất nào?",
+      "options": ["AHA", "BHA", "PHA", "Peptide"],
+      "answer": 0,
+      "explain": "Glycolic Acid là AHA – tan trong nước, tác động lên bề mặt da."
+    },
+    {
+      "question": "Da thâm mụn, không đều màu nên ưu tiên hoạt chất nào?",
+      "options": ["B3 (Niacinamide)", "B5 (Panthenol)", "Ceramide", "Urea 5%"],
+      "answer": 0,
+      "explain": "Niacinamide (B3) hỗ trợ mờ thâm và làm đều màu da."
+    },
+    {
+      "question": "Da thiếu ẩm, cần phục hồi nên ưu tiên hoạt chất nào?",
+      "options": ["B5 (Panthenol)", "B3 (Niacinamide)", "BHA", "Glycolic Acid"],
+      "answer": 0,
+      "explain": "Panthenol (B5) giúp làm dịu, giữ ẩm và phục hồi da."
+    },
+    {
+      "question": "Da thiếu nước, căng rít nên ưu tiên hoạt chất nào?",
+      "options": [
+        "HA (Hyaluronic Acid)",
+        "B3 (Niacinamide)",
+        "BHA",
+        "Tranexamic Acid"
+      ],
+      "answer": 0,
+      "explain": "Hyaluronic Acid (HA) giữ nước rất tốt, giúp cấp ẩm cho da thiếu nước."
+    },
+    {
+      "question": "Da xỉn màu, thâm sau mụn nên ưu tiên hoạt chất nào?",
+      "options": ["Vitamin C", "Panthenol", "Ceramide", "Urea 5%"],
+      "answer": 0,
+      "explain": "Vitamin C chống oxy hoá, giúp da sáng hơn và mờ thâm."
+    },
+    {
+      "question": "Da nhạy cảm, sau treatment nên ưu tiên hoạt chất nào?",
+      "options": ["Panthenol", "Vitamin C", "Glycolic Acid", "Retinol"],
+      "answer": 0,
+      "explain": "Panthenol dịu nhẹ, giúp làm dịu và phục hồi da nhạy cảm."
+    },
+    {
+      "question": "Da sần, nhiều tế bào chết nên ưu tiên hoạt chất nào?",
+      "options": ["AHA", "B5 (Panthenol)", "HA (Hyaluronic Acid)", "Ceramide"],
+      "answer": 0,
+      "explain": "AHA giúp loại bỏ tế bào chết trên bề mặt, làm da mịn hơn."
+    },
+    {
+      "question": "Da dầu nhưng vẫn thiếu ẩm nên ưu tiên hoạt chất nào?",
+      "options": ["Urea 5%", "BHA", "Alpha Arbutin", "Tranexamic Acid"],
+      "answer": 0,
+      "explain": "Urea 5% giúp giữ ẩm và làm mềm da, phù hợp với da dầu thiếu ẩm."
+    },
+    {
+      "question": "Da có mụn đầu đen, lỗ chân lông dễ bít tắc nên ưu tiên hoạt chất nào?",
+      "options": ["BHA", "Niacinamide", "Panthenol", "Alpha Arbutin"],
+      "answer": 0,
+      "explain": "BHA đi sâu vào lỗ chân lông, làm sạch bã nhờn gây mụn đầu đen."
+    },
+    {
+      "question": "Da thâm nám, không đều màu nên ưu tiên hoạt chất nào?",
+      "options": [
+        "Tranexamic Acid",
+        "B5 (Panthenol)",
+        "HA (Hyaluronic Acid)",
+        "Urea 5%"
+      ],
+      "answer": 0,
+      "explain": "Tranexamic Acid hỗ trợ cải thiện thâm nám và tăng sắc tố."
     }
   ]
 }
