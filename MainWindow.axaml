@@ -117,9 +117,7 @@
                     <!-- 4. Hướng dẫn -->
                     <Border Grid.Row="6" Background="#C0FFFFFF" BorderBrush="#A6B858" BorderThickness="5"
                             CornerRadius="44" Padding="60,34" Width="900" HorizontalAlignment="Center">
-                        <TextBlock Classes="sub" FontSize="40" LineHeight="58">
-                            <Run Text="Trả lời đúng " /><Run Text="2/3 câu hỏi" FontFamily="{StaticResource BvpBold}" Foreground="#A8613A" /><Run Text=" về DrCeutics để nhận ngay " /><Run Text="phần quà" FontFamily="{StaticResource BvpBold}" Foreground="#A8613A" /><Run Text=" xinh xắn!" />
-                        </TextBlock>
+                        <TextBlock x:Name="HomeRule" Classes="sub" FontSize="40" LineHeight="58" />
                     </Border>
 
                     <!-- 5. Nút bắt đầu -->

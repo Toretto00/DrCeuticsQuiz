@@ -25,6 +25,9 @@ public partial class MainWindow : Window
     // ---------- Dữ liệu ----------
     readonly QuizData _data = QuizData.Load();
     QuizConfig Cfg => _data.Config;
+    // Số câu mỗi lượt và số câu cần đúng – lấy từ questions.json, tự chặn giá trị vô lý
+    int TotalQ => Math.Max(1, Math.Min(Cfg.QuestionsPerGame, _data.Questions.Count));
+    int PassQ  => Math.Clamp(Cfg.PassScore, 1, TotalQ);
     readonly Random _rng = new();
 
     sealed record Opt(string Text, bool Ok);
@@ -94,6 +97,8 @@ public partial class MainWindow : Window
                 Close();
         };
 
+        // Dòng hướng dẫn ở màn chờ – tự lấy theo questions.json
+        SetRich(HomeRule, new (string Text, bool Bold)[] { ("Trả lời đúng ", false), ($"{PassQ}/{TotalQ} câu hỏi", true), (" về DrCeutics để nhận ngay ", false), ("phần quà", true), (" xinh xắn!", false) });
         ShowScreen(HomeScreen);
     }
 
@@ -122,7 +127,7 @@ public partial class MainWindow : Window
     void StartGame()
     {
         if (_mode == "quiz") return;
-        _qs = Shuffle(_data.Questions).Take(Math.Max(1, Cfg.QuestionsPerGame)).Select(q =>
+        _qs = Shuffle(_data.Questions).Take(TotalQ).Select(q =>
             new GameQ(q, Shuffle(q.Options.Select((t, i) => new Opt(t, i == q.Answer)).ToList()))).ToList();
         _qi = 0; _score = 0; _results.Clear();
         _mode = "quiz";
@@ -220,7 +225,7 @@ public partial class MainWindow : Window
     {
         _mode = "result";
         var n = _qs.Count;
-        var win = _score >= Math.Min(Cfg.PassScore, n);
+        var win = _score >= PassQ;
 
         RTitle.Text = win ? "CHÚC MỪNG!" : "TIẾC QUÁ!";
         RScore.Text = $"{_score}/{n}";
@@ -233,7 +238,8 @@ public partial class MainWindow : Window
         }
         else
         {
-            SetMsg(($"Cần đúng ít nhất {Cfg.PassScore}/{n} câu để nhận quà.\nThử lại lần nữa cùng Olive nhé!", false));
+            var need = PassQ == n ? $"Cần đúng cả {n} câu để nhận quà." : $"Cần đúng ít nhất {PassQ}/{n} câu để nhận quà.";
+            SetMsg(($"{need}\nThử lại lần nữa cùng Olive nhé!", false));
         }
 
         // Nút màn kết thúc: cùng độ rộng, chừa khoảng cách với mép màn hình
@@ -254,23 +260,26 @@ public partial class MainWindow : Window
         ShowScreen(ResultScreen);
     }
 
-    void SetMsg(params (string Text, bool Bold)[] parts)
+    // Ghi chữ có đoạn in đậm màu nâu vào một TextBlock bất kỳ
+    void SetRich(TextBlock tb, params (string Text, bool Bold)[] parts)
     {
-        RMsg.Inlines?.Clear();
-        RMsg.Inlines ??= new InlineCollection();
+        tb.Inlines?.Clear();
+        tb.Inlines ??= new InlineCollection();
         foreach (var (t, bold) in parts)
         {
             var lines = t.Split('\n');
             for (var i = 0; i < lines.Length; i++)
             {
-                if (i > 0) RMsg.Inlines.Add(new LineBreak());
+                if (i > 0) tb.Inlines.Add(new LineBreak());
                 if (lines[i].Length == 0) continue;
                 var run = new Run(lines[i]);
                 if (bold) { run.FontFamily = _bvpBold; run.Foreground = BrownB; }
-                RMsg.Inlines.Add(run);
+                tb.Inlines.Add(run);
             }
         }
     }
+
+    void SetMsg(params (string Text, bool Bold)[] parts) => SetRich(RMsg, parts);
 
     void OnSecond()
     {
