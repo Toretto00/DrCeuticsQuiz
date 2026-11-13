@@ -233,19 +233,6 @@
                 </Grid>
                 <Canvas x:Name="Confetti" IsHitTestVisible="False" />
             </Panel>
-
-            <!-- ================= THỐNG KÊ (chạm logo 5 lần) ================= -->
-            <Panel x:Name="AdminPanel" Background="#99281408" IsVisible="False">
-                <Border Background="White" CornerRadius="40" Padding="60" Width="800"
-                        HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Spacing="16">
-                        <TextBlock Classes="h1" Text="THỐNG KÊ HÔM NAY" FontSize="64" />
-                        <TextBlock x:Name="StPlays" FontSize="40" HorizontalAlignment="Center" />
-                        <TextBlock x:Name="StWins" FontSize="40" HorizontalAlignment="Center" />
-                        <StackPanel x:Name="AdminBtns" Orientation="Horizontal" Spacing="20" HorizontalAlignment="Center" Margin="0,24,0,0" />
-                    </StackPanel>
-                </Border>
-            </Panel>
         </Panel>
     </Viewbox>
 </Window>

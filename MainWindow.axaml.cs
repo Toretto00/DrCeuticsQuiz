@@ -25,7 +25,6 @@ public partial class MainWindow : Window
     // ---------- Dữ liệu ----------
     readonly QuizData _data = QuizData.Load();
     QuizConfig Cfg => _data.Config;
-    Stats _stats = Stats.Load();
     readonly Random _rng = new();
 
     sealed record Opt(string Text, bool Ok);
@@ -51,8 +50,6 @@ public partial class MainWindow : Window
     readonly ScaleTransform _pulse = new();
     readonly List<(Rectangle R, double Vy, double Vr)> _confetti = new();
 
-    readonly List<DateTime> _logoTaps = new();
-
     public MainWindow()
     {
         InitializeComponent();
@@ -69,16 +66,12 @@ public partial class MainWindow : Window
         foreach (var host in new[] { LogoHome, LogoQuiz, LogoResult })
         {
             host.Child = MakeLogo();
-            host.Tapped += OnLogoTapped;
         }
 
         // Nút
         StartHost.Children.Add(MakePill("BẮT ĐẦU", false, StartGame));
         StartHost.RenderTransform = _pulse;
         NextHost.Children.Add(MakePill("TIẾP TỤC", false, Next, 52));
-        AdminBtns.Children.Add(MakePill("XOÁ SỐ LIỆU", true, ResetStats, 40));
-        AdminBtns.Children.Add(MakePill("ĐÓNG", false, () => AdminPanel.IsVisible = false, 40));
-        AdminPanel.Tapped += (_, e) => e.Handled = true;
 
         HomeMascot.RenderTransform = new TransformGroup { Children = { _homeRot, _homeMove } };
 
@@ -132,7 +125,6 @@ public partial class MainWindow : Window
         _qs = Shuffle(_data.Questions).Take(Math.Max(1, Cfg.QuestionsPerGame)).Select(q =>
             new GameQ(q, Shuffle(q.Options.Select((t, i) => new Opt(t, i == q.Answer)).ToList()))).ToList();
         _qi = 0; _score = 0; _results.Clear();
-        _stats = Stats.Load(); _stats.Plays++; _stats.Save();
         _mode = "quiz";
         ShowScreen(QuizScreen);
         RenderQuestion();
@@ -237,7 +229,6 @@ public partial class MainWindow : Window
         if (win)
         {
             SetMsg(("Bạn đã nhận được ", false), ("1 phần quà", true), (" từ DrCeutics!", false));
-            _stats = Stats.Load(); _stats.Wins++; _stats.Save();
             StartConfetti();
         }
         else
@@ -421,31 +412,6 @@ public partial class MainWindow : Window
         row.PointerReleased += (_, _) => move.Y = 0;
         row.PointerCaptureLost += (_, _) => move.Y = 0;
         return (row, key);
-    }
-
-    // =====================================================================
-    //  THỐNG KÊ – chạm logo 5 lần trong 3 giây
-    // =====================================================================
-    void OnLogoTapped(object? sender, TappedEventArgs e)
-    {
-        e.Handled = true;
-        var now = DateTime.Now;
-        _logoTaps.RemoveAll(t => (now - t).TotalSeconds > 3);
-        _logoTaps.Add(now);
-        if (_logoTaps.Count < 5) return;
-        _logoTaps.Clear();
-        _stats = Stats.Load();
-        StPlays.Text = $"Lượt chơi: {_stats.Plays}";
-        StWins.Text = $"Lượt nhận quà: {_stats.Wins}";
-        AdminPanel.IsVisible = true;
-    }
-
-    void ResetStats()
-    {
-        _stats = new Stats();
-        _stats.Save();
-        StPlays.Text = "Lượt chơi: 0";
-        StWins.Text = "Lượt nhận quà: 0";
     }
 
     List<T> Shuffle<T>(IEnumerable<T> src)
