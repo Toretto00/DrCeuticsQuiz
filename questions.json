@@ -1,7 +1,7 @@
 {
   "config": {
     "questionsPerGame": 3,
-    "passScore": 2,
+    "passScore": 3,
     "timePerQuestion": 20,
     "autoNextMs": 3500,
     "resultTimeout": 45,
